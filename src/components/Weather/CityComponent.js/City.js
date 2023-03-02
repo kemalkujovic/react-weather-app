@@ -10,14 +10,15 @@ const City = (props) => {
         <img src={logo} className={classes.logo} />
         <h5 className={classes["search-name"]}>Find Weather of your city</h5>
       </div>
-      <form>
+      <form className={classes.form}>
         <input
+          className={classes.input}
           type="text"
           id="city"
           name="city"
           placeholder="Search for city..."
         />
-        <button>Search</button>
+        <button className={classes.button}>Search</button>
       </form>
     </Card>
   );

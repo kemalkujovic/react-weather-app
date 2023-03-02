@@ -3,8 +3,18 @@
 }
 
 .search-name {
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 40px 0px;
 }
 
 .input {
+  padding: 15px;
+}
+.button {
+  padding: 15px;
+  background-color: black;
+  color: white;
+}
+
+.form {
+  margin-bottom: 50px;
 }
