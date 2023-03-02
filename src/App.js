@@ -3,15 +3,21 @@ import React, { useState } from "react";
 import Weather from "./components/Weather/WeatherComponent/Weather";
 import axios from "axios";
 function App() {
-  const [value, setValue] = useState("");
+  const [weatherData, setWeatherData] = useState("");
   const fetchWeather = async (city) => {
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=81c012b926634fca41d6e3b2ad98d52b`
     );
-    setValue(response.data);
+    setWeatherData(response.data);
   };
   return (
-    <div>{value ? <Weather /> : <City onSearchCity={fetchWeather} />}</div>
+    <div>
+      {weatherData ? (
+        <Weather data={weatherData} />
+      ) : (
+        <City onSearchCity={fetchWeather} />
+      )}
+    </div>
   );
 }
 
