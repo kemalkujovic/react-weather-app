@@ -3,12 +3,12 @@ import Card from "../../Card/Card";
 import logo from "../../../assets/icons/perfect-day.svg";
 import classes from "./City.module.css";
 const City = (props) => {
-  const cityInputRef = useRef();
-
-  const confirmHandler = (event) => {
+  const citySearch = useRef("");
+  const onSubmitHandler = (event) => {
     event.preventDefault();
-    const enteredCity = cityInputRef.current.value;
-    console.log(enteredCity);
+
+    const city = citySearch.current.value;
+    props.onSearchCity(city);
   };
   return (
     <Card>
@@ -17,14 +17,14 @@ const City = (props) => {
         <img src={logo} className={classes.logo} />
         <h5 className={classes["search-name"]}>Find Weather of your city</h5>
       </div>
-      <form onSubmit={confirmHandler} className={classes.form}>
+      <form onSubmit={onSubmitHandler}>
         <input
           className={classes.input}
           type="text"
           id="city"
           name="city"
           placeholder="Search for city..."
-          ref={cityInputRef}
+          ref={citySearch}
         />
         <button className={classes.button}>Search</button>
       </form>
