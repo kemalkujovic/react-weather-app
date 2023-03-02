@@ -42,10 +42,10 @@ const Weather = (props) => {
         <h1>{`${city}, ${country}`}</h1>
         <div></div>
         <img src={sunrise}></img>
-        <h1>{Math.round((props.data.main.feels_like - 273.15) * 10) / 10}</h1>
         <img src={wind}></img>
         <img src={pressure}></img>
         <img src={humidity1}></img>
+        <h1>{Math.round((props.data.main.feels_like - 273.15) * 10) / 10}</h1>
         <h1>{props.data.main.humidity}</h1>
         <h1>{props.data.main.pressure}</h1>
         <h1>{props.data.wind.speed}</h1>
