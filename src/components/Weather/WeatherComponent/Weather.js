@@ -6,11 +6,14 @@ import humidity1 from "../../../assets/icons/humidity.svg";
 import wind from "../../../assets/icons/wind.svg";
 import pressure from "../../../assets/icons/pressure.svg";
 import fada from "../../../assets/icons/sunny.svg";
+import AppHeaderText from "../../AppHeaderText";
+import Location from "../../WeatherInfo/Location";
 const Weather = (props) => {
-  const city = props.data.name;
-  const country = props.data.sys.country;
-  const { description, id } = props.data.weather[0];
-  const { feels_like, humidity, temp } = props.data.main;
+  const WeatherData = props.data;
+  const city = WeatherData.name;
+  const country = WeatherData.sys.country;
+  const { description, id } = WeatherData.weather[0];
+  const { feels_like, humidity, temp } = WeatherData.main;
   console.log(description, id, city, feels_like, humidity, temp);
   const WeatherIcons = {
     "01d": "../../../assets/icons/sunny.svg",
@@ -29,18 +32,16 @@ const Weather = (props) => {
     "11n": "../../../assets/icons/storm.svg",
   };
 
-  console.log(WeatherIcons[props.data?.weather[0].icon]);
   return (
     <Card>
       <div>
-        <h5>React Weather App</h5>
+        <AppHeaderText>Weather App</AppHeaderText>
         <span>{`${Math.floor(temp - 273)}°C`}</span>
         {`  |  ${description}`}
         <img
           src={`https://openweathermap.org/img/w/${props.data.weather[0].icon}.png`}
         />
-        <h1>{`${city}, ${country}`}</h1>
-        <div></div>
+        <Location WeatherData={WeatherData}></Location>
         <img src={sunrise}></img>
         <img src={wind}></img>
         <img src={pressure}></img>
