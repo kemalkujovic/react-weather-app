@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Card from "../../Card/Card";
 import logo from "../../../assets/icons/perfect-day.svg";
 import classes from "./City.module.css";
+import AppHeaderText from "../../AppHeaderText";
 const City = (props) => {
   const citySearch = useRef("");
   const onSubmitHandler = (event) => {
@@ -13,7 +14,7 @@ const City = (props) => {
   return (
     <Card>
       <div>
-        <h5>React Weather App</h5>
+        <AppHeaderText>React Weather App</AppHeaderText>
         <img src={logo} className={classes.logo} />
         <h5 className={classes["search-name"]}>Find Weather of your city</h5>
       </div>
