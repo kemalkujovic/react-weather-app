@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Card from "../../Card/Card";
 import logo from "../../../assets/icons/perfect-day.svg";
 import classes from "./City.module.css";
-import AppHeaderText from "../../AppHeaderText";
+import AppHeaderText from "../../WeatherInfo/AppHeaderText";
 const City = (props) => {
   const citySearch = useRef("");
   const onSubmitHandler = (event) => {

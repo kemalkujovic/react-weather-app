@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Location.module.css";
+import classes from "./WeatherInfo.module.css";
 const Location = ({ WeatherData }) => {
   return (
     <div
