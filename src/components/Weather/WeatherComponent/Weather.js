@@ -9,9 +9,9 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import classes from "./Weather.module.css";
 const Weather = (props) => {
   const WeatherData = props.data;
-  function submit() {
-    console.log("dasdsa");
-  }
+  const submit = () => {
+    props.updateWeatherData("");
+  };
   return (
     <Card>
       <AppHeaderText>Weather App</AppHeaderText>

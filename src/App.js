@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       {weatherData ? (
-        <Weather data={weatherData} />
+        <Weather data={weatherData} updateWeatherData={setWeatherData} />
       ) : (
         <City onSearchCity={fetchWeather} />
       )}
