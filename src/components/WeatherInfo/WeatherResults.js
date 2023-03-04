@@ -25,7 +25,6 @@ const WeatherResults = ({ props, WeatherData }) => {
       id: Math.random().toString(36).slice(2),
     },
   ];
-  console.log(WeatherData);
   return (
     <div className={classes.weatherResultInfo}>
       <WeatherProp

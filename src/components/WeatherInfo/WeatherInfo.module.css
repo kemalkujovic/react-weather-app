@@ -14,3 +14,14 @@
   align-items: center;
   justify-content: space-around;
 }
+.temp {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+.temp img {
+  width: 100px;
+  height: 100px;
+}
