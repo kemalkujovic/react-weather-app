@@ -18,7 +18,6 @@ function App() {
       ) : (
         <City onSearchCity={fetchWeather} />
       )}
-      <GeoButton></GeoButton>
     </div>
   );
 }

@@ -9,13 +9,17 @@
 
 .input {
   padding: 15px;
+  border-color: aqua;
 }
 .button {
   padding: 15px;
-  background-color: black;
+  background-color: aqua;
   color: white;
+  border-color: aqua;
 }
 
 .form {
-  margin-bottom: 50px;
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }

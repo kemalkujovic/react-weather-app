@@ -3,6 +3,7 @@ import Card from "../../Card/Card";
 import classes from "./City.module.css";
 import AppHeaderText from "../../WeatherInfo/AppHeaderText";
 import logo from "../../../logo.svg";
+import GeoButton from "../../geoLocation/geoButton";
 const City = (props) => {
   const citySearch = useRef("");
   const onSubmitHandler = (event) => {
@@ -18,17 +19,20 @@ const City = (props) => {
         <img src={logo} className={classes.logo} />
         <h1 className={classes["search-name"]}>Find Weather of your city</h1>
       </div>
-      <form onSubmit={onSubmitHandler}>
-        <input
-          className={classes.input}
-          type="text"
-          id="city"
-          name="city"
-          placeholder="Search for city..."
-          ref={citySearch}
-        />
-        <button className={classes.button}>Search</button>
-      </form>
+      <div className={classes.form}>
+        <form onSubmit={onSubmitHandler}>
+          <input
+            className={classes.input}
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Search for city..."
+            ref={citySearch}
+          />
+          <button className={classes.button}>Search</button>
+        </form>
+        <GeoButton />
+      </div>
     </Card>
   );
 };
