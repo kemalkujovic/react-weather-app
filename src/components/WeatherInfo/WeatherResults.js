@@ -2,30 +2,58 @@ import React from "react";
 import classes from "./WeatherInfo.module.css";
 import WeatherProp from "./WeatherProp";
 
-const WeatherResults = (props) => {
+const WeatherResults = ({ props, WeatherData }) => {
   const data = [
     {
       name: "Feels like",
       icon_link: "icons/temp.svg",
+      id: Math.random().toString(36).slice(2),
     },
     {
       name: "Humidity",
       icon_link: "icons/humidity.svg",
+      id: Math.random().toString(36).slice(2),
     },
     {
       name: "Wind",
       icon_link: "icons/wind.svg",
+      id: Math.random().toString(36).slice(2),
     },
     {
       name: "Pressure",
       icon_link: "icons/pressure.svg",
+      id: Math.random().toString(36).slice(2),
     },
   ];
+  console.log(WeatherData);
   return (
-    <div className={classes.resultProps}>
-      {data.map((el) => {
-        return <WeatherProp src={el.icon_link} title={el.name} key={el.name} />;
-      })}
+    <div className={classes.weatherResultInfo}>
+      <WeatherProp
+        src={data[0].icon_link}
+        title={data[0].name}
+        weatherResult={
+          (Math.round(WeatherData.main.feels_like - 273.15) * 10) / 10
+        }
+        key={data[0].id}
+      />
+      <WeatherProp
+        src={data[1].icon_link}
+        title={data[1].name}
+        weatherResult={WeatherData.main.humidity}
+        key={data[1].id}
+      />
+      <WeatherProp
+        src={data[2].icon_link}
+        title={data[2].name}
+        weatherResult={WeatherData.wind.speed}
+        key={data[2].id}
+      />
+      <WeatherProp
+        src={data[3].icon_link}
+        title={data[3].name}
+        weatherResult={WeatherData.main.pressure}
+        key={data[3].id}
+      />
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Weather = (props) => {
         <AppTemp WeatherData={WeatherData}></AppTemp>
         <ImgIcon WeatherData={WeatherData} />
         <Location WeatherData={WeatherData} />
-        <WeatherResults />
+        <WeatherResults WeatherData={WeatherData} />
       </div>
     </Card>
   );
