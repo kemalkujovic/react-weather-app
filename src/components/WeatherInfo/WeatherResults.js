@@ -3,6 +3,12 @@ import classes from "./WeatherInfo.module.css";
 import WeatherProp from "./WeatherProp";
 
 const WeatherResults = ({ props, WeatherData }) => {
+  let feelsLike;
+  if (WeatherData.main.feels_like > 200) {
+    feelsLike = (Math.round(WeatherData.main.feels_like - 273.15) * 10) / 10;
+  } else {
+    feelsLike = WeatherData.main.feels_like.toFixed(1);
+  }
   const data = [
     {
       name: "Feels like",
@@ -25,14 +31,13 @@ const WeatherResults = ({ props, WeatherData }) => {
       id: Math.random().toString(36).slice(2),
     },
   ];
+
   return (
     <div className={classes.weatherResultInfo}>
       <WeatherProp
         src={data[0].icon_link}
         title={data[0].name}
-        weatherResult={
-          (Math.round(WeatherData.main.feels_like - 273.15) * 10) / 10
-        }
+        weatherResult={feelsLike}
         key={data[0].id}
       />
       <WeatherProp

@@ -2,11 +2,11 @@ import React from "react";
 import Card from "../../Card/Card";
 import AppHeaderText from "../../WeatherInfo/AppHeaderText";
 import Location from "../../WeatherInfo/Location";
-import ImgIcon from "../../WeatherInfo/ImgIcon";
 import AppTemp from "../../WeatherInfo/AppTemp";
 import WeatherResults from "../../WeatherInfo/WeatherResults";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import classes from "./Weather.module.css";
+import GeoButton from "../../geoLocation/geoButton";
 const Weather = (props) => {
   const WeatherData = props.data;
   const submit = () => {

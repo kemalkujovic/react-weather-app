@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./geoLocation.module.css";
 import axios from "axios";
+import Weather from "../Weather/WeatherComponent/Weather";
 const GeoButton = (props) => {
   const getCurrentPositionHandler = () => {
     if (navigator.geolocation) {
@@ -13,6 +14,7 @@ const GeoButton = (props) => {
     const { latitude, longitude } = position.coords;
     const api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=81c012b926634fca41d6e3b2ad98d52b`;
     const response = await axios.get(api);
+    props.onGeoSearch(response.data);
     console.log(response);
   };
   const onError = () => {
