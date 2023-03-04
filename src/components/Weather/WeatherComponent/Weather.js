@@ -6,7 +6,6 @@ import AppTemp from "../../WeatherInfo/AppTemp";
 import WeatherResults from "../../WeatherInfo/WeatherResults";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import classes from "./Weather.module.css";
-import GeoButton from "../../geoLocation/geoButton";
 const Weather = (props) => {
   const WeatherData = props.data;
   const submit = () => {
