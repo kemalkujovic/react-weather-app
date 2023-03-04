@@ -6,7 +6,7 @@ import ImgIcon from "../../WeatherInfo/ImgIcon";
 import AppTemp from "../../WeatherInfo/AppTemp";
 import WeatherResults from "../../WeatherInfo/WeatherResults";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-
+import classes from "./Weather.module.css";
 const Weather = (props) => {
   const WeatherData = props.data;
   function submit() {
@@ -18,7 +18,13 @@ const Weather = (props) => {
       <AppTemp WeatherData={WeatherData} />
       <Location WeatherData={WeatherData} />
       <WeatherResults WeatherData={WeatherData} />
-      <ArrowBackIcon onClick={submit}></ArrowBackIcon>
+      <ArrowBackIcon
+        onClick={submit}
+        className={classes.backBtn}
+        style={{
+          fontSize: "50px",
+        }}
+      ></ArrowBackIcon>
     </Card>
   );
 };
