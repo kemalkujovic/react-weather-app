@@ -2,6 +2,7 @@ import City from "./components/Weather/CityComponent.js/City";
 import React, { useState } from "react";
 import Weather from "./components/Weather/WeatherComponent/Weather";
 import axios from "axios";
+import GeoButton from "./components/geoLocation/geoButton";
 function App() {
   const [weatherData, setWeatherData] = useState("");
   const fetchWeather = async (city) => {
@@ -17,6 +18,7 @@ function App() {
       ) : (
         <City onSearchCity={fetchWeather} />
       )}
+      <GeoButton></GeoButton>
     </div>
   );
 }

@@ -24,7 +24,7 @@ const Weather = (props) => {
         style={{
           fontSize: "50px",
         }}
-      ></ArrowBackIcon>
+      />
     </Card>
   );
 };
