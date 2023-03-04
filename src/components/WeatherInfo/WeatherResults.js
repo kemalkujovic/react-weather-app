@@ -6,19 +6,19 @@ const WeatherResults = (props) => {
   const data = [
     {
       name: "Feels like",
-      icon_link: "../../../assets/icons/temp.svg",
+      icon_link: "icons/temp.svg",
     },
     {
       name: "Humidity",
-      icon_link: "../../../assets/icons/humidity.svg",
+      icon_link: "icons/humidity.svg",
     },
     {
       name: "Wind",
-      icon_link: "../../../assets/icons/wind.svg",
+      icon_link: "icons/wind.svg",
     },
     {
       name: "Pressure",
-      icon_link: "../../../assets/icons/pressure.svg",
+      icon_link: "icons/pressure.svg",
     },
   ];
   return (

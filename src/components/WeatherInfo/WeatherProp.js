@@ -3,7 +3,7 @@ const WeatherProp = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <img src="icons/rain.svg"></img>
+      <img src={props.src}></img>
     </div>
   );
 };
