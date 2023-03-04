@@ -5,16 +5,20 @@ import Location from "../../WeatherInfo/Location";
 import ImgIcon from "../../WeatherInfo/ImgIcon";
 import AppTemp from "../../WeatherInfo/AppTemp";
 import WeatherResults from "../../WeatherInfo/WeatherResults";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
 const Weather = (props) => {
   const WeatherData = props.data;
+  function submit() {
+    console.log("dasdsa");
+  }
   return (
     <Card>
-      <div>
-        <AppHeaderText>Weather App</AppHeaderText>
-        <AppTemp WeatherData={WeatherData} />
-        <Location WeatherData={WeatherData} />
-        <WeatherResults WeatherData={WeatherData} />
-      </div>
+      <AppHeaderText>Weather App</AppHeaderText>
+      <AppTemp WeatherData={WeatherData} />
+      <Location WeatherData={WeatherData} />
+      <WeatherResults WeatherData={WeatherData} />
+      <ArrowBackIcon onClick={submit}></ArrowBackIcon>
     </Card>
   );
 };

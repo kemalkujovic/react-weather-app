@@ -16,7 +16,7 @@ const City = (props) => {
       <div>
         <AppHeaderText>React Weather App</AppHeaderText>
         <img src={logo} className={classes.logo} />
-        <h5 className={classes["search-name"]}>Find Weather of your city</h5>
+        <h1 className={classes["search-name"]}>Find Weather of your city</h1>
       </div>
       <form onSubmit={onSubmitHandler}>
         <input
