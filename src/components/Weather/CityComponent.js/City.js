@@ -35,6 +35,7 @@ const City = (props) => {
     const api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=81c012b926634fca41d6e3b2ad98d52b`;
     const response = await axios.get(api);
     props.onGeo(response.data);
+    console.log(response);
   };
 
   let inputClass;
