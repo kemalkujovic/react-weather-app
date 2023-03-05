@@ -7,10 +7,11 @@ import axios from "axios";
 const City = (props) => {
   const [enteredCity, setEnteredCity] = useState("");
   const citySearch = useRef("");
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
-
     const city = citySearch.current.value;
+
     if (city.trim().length > 0) {
       props.onSearchCity(city);
     }
@@ -19,12 +20,11 @@ const City = (props) => {
   const onChangeHandler = (event) => {
     setEnteredCity(event.target.value);
     props.updateErrorHandling(false);
-    console.log(event);
   };
 
   const getCurrentPositionHandler = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(succesFull, onError);
+      navigator.geolocation.getCurrentPosition(succesFull);
     } else {
       alert("Your browser not support Geo api");
     }
@@ -37,12 +37,7 @@ const City = (props) => {
     props.onGeo(response.data);
   };
 
-  const onError = () => {
-    console.log("Greska");
-  };
-
   let inputClass;
-  let errorMessage;
   if (props.error) {
     inputClass = `${classes.input} ${classes.inputValid}`;
   } else {
