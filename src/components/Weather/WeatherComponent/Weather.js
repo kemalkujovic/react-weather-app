@@ -10,6 +10,7 @@ const Weather = (props) => {
   const WeatherData = props.data;
   const submit = () => {
     props.updateWeatherData("");
+    props.updateErrorHandling("");
   };
   return (
     <Card>

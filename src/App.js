@@ -20,7 +20,11 @@ function App() {
   return (
     <div>
       {weatherData ? (
-        <Weather data={weatherData} updateWeatherData={setWeatherData} />
+        <Weather
+          updateErrorHandling={setHttpError}
+          data={weatherData}
+          updateWeatherData={setWeatherData}
+        />
       ) : (
         <City
           error={httpError}
