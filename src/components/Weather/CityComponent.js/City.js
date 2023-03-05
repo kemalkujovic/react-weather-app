@@ -30,7 +30,13 @@ const City = (props) => {
   const onError = () => {
     console.log("Greska");
   };
-
+  let inputClass;
+  let errorMessage;
+  if (props.error) {
+    inputClass = `${classes.input} ${classes.inputValid}`;
+  } else {
+    inputClass = `${classes.input}`;
+  }
   return (
     <Card>
       <div>
@@ -41,7 +47,7 @@ const City = (props) => {
       <div className={classes.form}>
         <form onSubmit={onSubmitHandler}>
           <input
-            className={classes.input}
+            className={inputClass}
             type="text"
             id="city"
             name="city"
@@ -49,6 +55,9 @@ const City = (props) => {
             ref={citySearch}
           />
           <button className={classes.button}>Search</button>
+          {props.error && (
+            <p className={classes["input-ValidText"]}>Enter a valid City</p>
+          )}
         </form>
         <div className={classes.separetor}></div>
         <button className={classes.geoBtn} onClick={getCurrentPositionHandler}>

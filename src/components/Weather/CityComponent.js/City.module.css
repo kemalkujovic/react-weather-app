@@ -51,3 +51,10 @@
   cursor: pointer;
   margin-bottom: 15px;
 }
+.inputValid {
+  border: 1px solid red;
+}
+.input-ValidText {
+  color: red;
+  font-size: 14px;
+}
