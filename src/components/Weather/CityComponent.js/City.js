@@ -27,9 +27,11 @@ const City = (props) => {
     const response = await axios.get(api);
     props.onGeo(response.data);
   };
+
   const onError = () => {
     console.log("Greska");
   };
+
   let inputClass;
   let errorMessage;
   if (props.error) {
