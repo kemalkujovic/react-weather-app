@@ -5,12 +5,21 @@ import AppHeaderText from "../../WeatherInfo/AppHeaderText";
 import logo from "../../../logo.svg";
 import axios from "axios";
 const City = (props) => {
+  const [enteredCity, setEnteredCity] = useState("");
   const citySearch = useRef("");
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
     const city = citySearch.current.value;
-    props.onSearchCity(city);
+    if (city.trim().length > 0) {
+      props.onSearchCity(city);
+    }
+  };
+
+  const onChangeHandler = (event) => {
+    setEnteredCity(event.target.value);
+    props.updateErrorHandling(false);
+    console.log(event);
   };
 
   const getCurrentPositionHandler = () => {
@@ -55,6 +64,7 @@ const City = (props) => {
             name="city"
             placeholder="Search for city..."
             ref={citySearch}
+            onChange={onChangeHandler}
           />
           <button className={classes.button}>Search</button>
           {props.error && (

@@ -27,6 +27,7 @@ function App() {
         />
       ) : (
         <City
+          updateErrorHandling={setHttpError}
           error={httpError}
           onSearchCity={fetchWeather}
           onGeo={setWeatherData}
